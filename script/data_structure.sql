@@ -20,7 +20,7 @@ create database nba
 	);
 	--action
 	create table actions (
-		id serial primary key,
+		id varchar(10) primary key,
 		designation varchar(20),
 		point int
 	);
@@ -30,30 +30,32 @@ create database nba
 		joueur_id int,
 		equipe_id int,
 		saison_id int,
-		numerojoueur int
+		numerojoueur int,
 		foreign key (joueur_id) references joueur(id),
 		foreign key (equipe_id) references equipe(id),
 		foreign key (saison_id) references saison(id)
 	);
+	--matchs
 	create table matchs (
 		id serial primary key,
 		saison_id int,
 		equipe_id1 int,
 		equipe_id2 int,
-		datematch date
+		datematch date,
 		foreign key (equipe_id1) references equipe(id),
 		foreign key (equipe_id2) references equipe(id),
 		foreign key (saison_id) references saison(id)
 	);
+	--statistiques
 	create table statistique (
 		id serial primary key,
 		match_id int,
 		joueur_id int,
-		action_id int,
+		action_id varchar(10),
 		foreign key (joueur_id) references joueur(id),
 		foreign key (match_id) references matchs(id),
-		foreign key (action_id) references actions(id),
-	)
+		foreign key (action_id) references actions(id)
+	);
 	
 
 	

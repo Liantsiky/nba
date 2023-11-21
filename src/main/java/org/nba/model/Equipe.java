@@ -8,31 +8,31 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="joueur")
-public class Joueur {
+@Table(name="equipe")
+public class Equipe {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	int id;
 	
-	@Column(name="nomprenom")
-	String nomPrenom;
+	@Column(name="nomequipe")
+	String nomEquipe;
 	
 	public int getId() {
 		return id;
 	}
 	
-	public String getNomPrenom() {
-		return nomPrenom;
+	public String getNomEquipe() {
+		return nomEquipe;
 	}
 	
 	public void setId(int id) {
 		this.id = id;
 	}
 	
-	public void setNomPrenom(String nomPrenom) {
-		this.nomPrenom = nomPrenom;
+	public void setNomEquipe(String nomEquipe) {
+		this.nomEquipe = nomEquipe;
 	}
 	
 }

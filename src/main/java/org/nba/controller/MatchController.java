@@ -3,6 +3,7 @@ package org.nba.controller;
 import java.util.List;
 
 import org.nba.model.EquipeSaison;
+import org.nba.model.Match;
 import org.nba.service.EquipeSaisonService;
 import org.nba.service.MatchService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.deser.DataFormatReaders.Match;
 
 @RestController
 @RequestMapping(path="/api")

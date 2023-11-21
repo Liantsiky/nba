@@ -17,26 +17,26 @@ public class Match {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id")
-	int id;
+	@Column(name="id_matchs")
+	Integer idMatch;
 	
 	@ManyToOne
-	@JoinColumn(name="saison_id")
+	@JoinColumn(name="id_saison")
 	Saison saison;
 	
 	@ManyToOne
-	@JoinColumn(name="equipe_id1")
+	@JoinColumn(name="id_equipe1")
 	Equipe equipe1;
 	
 	@ManyToOne
-	@JoinColumn(name="equipe_id2")
+	@JoinColumn(name="id_equipe2")
 	Equipe equipe2;
 	
 	@Column(name="datematch")
 	LocalDate dateMatch;
 	
-	public int getId() {
-		return id;
+	public Integer getIdMatch() {
+		return idMatch;
 	}
 	
 	public Saison getSaison() {
@@ -55,8 +55,8 @@ public class Match {
 		return dateMatch;
 	}
 	
-	public void setId(int id) {
-		this.id = id;
+	public void setIdMatch(Integer idMatch) {
+		this.idMatch = idMatch;
 	}
 	
 	public void setEquipe1(Equipe equipe1) {

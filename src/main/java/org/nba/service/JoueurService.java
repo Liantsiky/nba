@@ -32,7 +32,7 @@ public class JoueurService {
 			
 			Joueur joueur = new Joueur();
 			
-			joueur.setId(entity.getId());
+//			joueur.setId(entity.getId());
 			joueur.setNomPrenom(entity.getNomPrenom());
 			
 			joueurRepo.save(joueur);

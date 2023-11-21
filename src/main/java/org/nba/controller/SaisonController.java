@@ -26,13 +26,14 @@ public class SaisonController {
 	SaisonService saisonService;
 	
 
-	@GetMapping("/saisons")
+	@GetMapping("saisons")
 	public ResponseEntity<String> getAllMatch() {
 		try {
 			List<Saison> liste = saisonService.getAll();
 			
 			String json = objectMapper.writeValueAsString(liste);
 			return new ResponseEntity<>(json,HttpStatus.OK);
+			
 		} catch (Exception e) {
 			// TODO: handle exception
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);

@@ -15,7 +15,7 @@ public class EquipeSaisonService {
 	EquipeSaisonRepository equipeSaisonRepo;
 	
 	public List<EquipeSaison> getAll() throws Exception{
-		List<EquipeSaison> equipes = new ArrayList<>();
+		List<EquipeSaison> equipes = new ArrayList<EquipeSaison>();
 		
 		try {
 			
@@ -33,7 +33,7 @@ public class EquipeSaisonService {
 			
 			EquipeSaison equipeSaison = new EquipeSaison();
 			
-			equipeSaison.setId(entity.getId());
+//			equipeSaison.setId(entity.getId());
 			equipeSaison.setJoueur(entity.getJoueur());
 			equipeSaison.setEquipe(entity.getEquipe());
 			equipeSaison.setNumeroJoueur(entity.getNumeroJoueur());

@@ -13,22 +13,22 @@ public class Equipe {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id")
-	int id;
+	@Column(name="id_equipe")
+	Integer idEquipe;
 	
 	@Column(name="nomequipe")
 	String nomEquipe;
 	
-	public int getId() {
-		return id;
+	public Integer getIdEquipe() {
+		return idEquipe;
 	}
 	
 	public String getNomEquipe() {
 		return nomEquipe;
 	}
 	
-	public void setId(int id) {
-		this.id = id;
+	public void setIdEquipe(Integer id) {
+		this.idEquipe = id;
 	}
 	
 	public void setNomEquipe(String nomEquipe) {

@@ -32,7 +32,7 @@ public class SaisonService {
 		
 		try {
 			
-			saison.setId(entity.getId());
+//			saison.setId(entity.getId());
 			saison.setEdition(entity.getEdition());
 			saison.setAnneeDebut(entity.getAnneeDebut());
 			saison.setAnneeFin(entity.getAnneeFin());

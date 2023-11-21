@@ -1,10 +1,8 @@
 package org.nba.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.nba.model.Equipe;
-import org.nba.repository.EquipeRepository;
 import org.nba.service.EquipeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,9 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.vehicule.vehicule.model.Vehicule;
 
 @RestController
 @RequestMapping(path="/api")
@@ -45,8 +41,8 @@ public class EquipeController {
 	@PostMapping("/equipes")
 	public ResponseEntity<String> createEquipe(@RequestBody Equipe equipe){
 		try {
-			Equipe _equipe = equipeService.insert(_equipe);
-			String json = objectMapper.writeValueAsString(equipe);
+			Equipe _equipe = equipeService.insert(equipe);
+			String json = objectMapper.writeValueAsString(_equipe);
 			return new ResponseEntity<>(json,HttpStatus.CREATED);
 		} catch(Exception e) {
 			return new ResponseEntity<> (e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);

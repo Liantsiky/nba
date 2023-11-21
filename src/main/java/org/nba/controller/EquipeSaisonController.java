@@ -32,6 +32,7 @@ public class EquipeSaisonController {
 			
 			String json = objectMapper.writeValueAsString(liste);
 			return new ResponseEntity<>(json,HttpStatus.OK);
+			
 		} catch (Exception e) {
 			// TODO: handle exception
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
@@ -39,7 +40,7 @@ public class EquipeSaisonController {
 	}
 	
 
-	@PostMapping("/equipe_saisons")
+	@PostMapping("/equipe_saison")
 	public ResponseEntity<String> createEquipeSaison(@RequestBody EquipeSaison equipeSaison){
 		try {
 			EquipeSaison _equipeSaison = equipeSaisonService.insert(equipeSaison);

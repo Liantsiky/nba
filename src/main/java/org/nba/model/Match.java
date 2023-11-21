@@ -12,7 +12,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="match")
+@Table(name="matchs")
 public class Match {
 
 	@Id

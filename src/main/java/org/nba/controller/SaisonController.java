@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.deser.DataFormatReaders.Match;
 
 @RestController
 @RequestMapping(name="/api")
@@ -27,7 +26,7 @@ public class SaisonController {
 	
 
 	@GetMapping("saisons")
-	public ResponseEntity<String> getAllMatch() {
+	public ResponseEntity<String> getAllSaison() {
 		try {
 			List<Saison> liste = saisonService.getAll();
 			

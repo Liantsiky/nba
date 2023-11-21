@@ -34,7 +34,6 @@ public class EquipeSaisonController {
 			return new ResponseEntity<>(json,HttpStatus.OK);
 			
 		} catch (Exception e) {
-			// TODO: handle exception
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}

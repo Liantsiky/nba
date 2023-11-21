@@ -25,14 +25,13 @@ public class MatchService {
 		} catch (Exception e) {
 			throw e;
 		}
-		
 	}
 	
 	public Match insert(Match entity)throws Exception{
 		Match match = new Match();
 		try {
 			
-			match.setId(entity.getId());
+//			match.setId(entity.getId());
 			match.setDateMatch(entity.getDateMatch());
 			match.setEquipe1(entity.getEquipe1());
 			match.setEquipe2(entity.getEquipe2());

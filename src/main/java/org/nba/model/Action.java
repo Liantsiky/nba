@@ -12,8 +12,8 @@ import jakarta.persistence.Table;
 public class Action {
 
 	@Id
-	@Column(name="id")
-	String id;
+	@Column(name="id_actions")
+	String idAction;
 	
 	@Column(name="designation")
 	String designation;
@@ -21,8 +21,8 @@ public class Action {
 	@Column(name="point")
 	int point;
 	
-	public String getId() {
-		return id;
+	public String getIdAction() {
+		return idAction;
 	}
 	
 	public String getDesignation() {
@@ -33,8 +33,8 @@ public class Action {
 		return point;
 	}
 	
-	public void setId(String id) {
-		this.id = id;
+	public void setIdAction(String idAction) {
+		this.idAction = idAction;
 	}
 	
 	public void setDesignation(String designation) {

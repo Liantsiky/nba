@@ -15,8 +15,8 @@ public class Saison {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id")
-	int id;
+	@Column(name="id_saison")
+	Integer idSaison;
 	
 	@Column(name="edition")
 	int edition;
@@ -27,8 +27,8 @@ public class Saison {
 	@Column(name="anneeFin")
 	int anneeFin;
 	
-	public int getId() {
-		return id;
+	public int getIdSaison() {
+		return idSaison;
 	}
 	
 	public int getEdition() {
@@ -43,8 +43,8 @@ public class Saison {
 		return anneeFin;
 	}
 	
-	public void setId(int id) {
-		this.id = id;
+	public void setIdSaison(Integer id) {
+		this.idSaison = id;
 	}
 	
 	public void setEdition(int edition) {

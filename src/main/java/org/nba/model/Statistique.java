@@ -15,23 +15,23 @@ public class Statistique {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id")
-	int id;
+	@Column(name="id_statistique")
+	Integer idStatistique;
 	
 	@ManyToOne
-	@JoinColumn(name="match_id")
+	@JoinColumn(name="id_matchs")
 	Match match;
 	
 	@ManyToOne
-	@JoinColumn(name="joueur_id")
+	@JoinColumn(name="id_joueur")
 	Joueur joueur;
 	
 	@ManyToOne
-	@JoinColumn(name="action_id")
+	@JoinColumn(name="id_actions")
 	Action action;
 	
-	public int getId() {
-		return id;
+	public Integer getIdStatistique() {
+		return idStatistique;
 	}
 	
 	public Action getAction() {
@@ -45,8 +45,8 @@ public class Statistique {
 		return match;
 	}
 	
-	public void setId(int id) {
-		this.id = id;
+	public void setIdStatistique(Integer idStatistique) {
+		this.idStatistique = idStatistique;
 	}
 	
 	public void setAction(Action action) {

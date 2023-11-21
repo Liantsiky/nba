@@ -2,6 +2,7 @@ package org.nba.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -15,26 +16,26 @@ public class EquipeSaison {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id")
-	int id;
+	@Column(name="id_equipesaison")
+	Integer idEquipeSaison;
 	
 	@ManyToOne
-	@JoinColumn(name="joueur_id")
+	@JoinColumn(nullable = false, name="id_joueur")
 	Joueur joueur;
 	
 	@ManyToOne
-	@JoinColumn(name="equipe_id")
+	@JoinColumn(nullable = false, name="id_equipe")
 	Equipe equipe;
 	
 	@ManyToOne
-	@JoinColumn(name="saison_id")
+	@JoinColumn(nullable= false, name="id_saison")
 	Saison saison;
 	
 	@Column(name="numerojoueur")
 	int numeroJoueur;
 	
-	public int getId() {
-		return id;
+	public Integer getIdEquipeSaison() {
+		return idEquipeSaison;
 	}
 	
 	public Joueur getJoueur() {
@@ -53,8 +54,8 @@ public class EquipeSaison {
 		return numeroJoueur;
 	}
 	
-	public void setId(int id) {
-		this.id = id;
+	public void setIdEquipeSaison(Integer idEquipeSaison) {
+		this.idEquipeSaison = idEquipeSaison;
 	}
 	
 	public void setJoueur(Joueur joueur) {

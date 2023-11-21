@@ -32,7 +32,7 @@ public class EquipeService {
 			
 			Equipe equipe = new Equipe();
 			
-			equipe.setId(entity.getId());
+//			equipe.setId(entity.getId());
 			equipe.setNomEquipe(entity.getNomEquipe());
 			
 			equipeRepo.save(equipe);

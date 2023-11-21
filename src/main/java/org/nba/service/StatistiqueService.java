@@ -31,7 +31,7 @@ public class StatistiqueService {
 		Statistique statistique = new Statistique();
 		try {
 			
-			statistique.setId(entity.getId());
+//			statistique.setId(entity.getId());
 			statistique.setAction(entity.getAction());
 			statistique.setJoueur(entity.getJoueur());
 			statistique.setMatch(entity.getMatch());

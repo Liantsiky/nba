@@ -2,7 +2,6 @@ package org.nba.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -26,7 +25,7 @@ public class EquipeSaison {
 	@ManyToOne
 	@JoinColumn(nullable = false, name="id_equipe")
 	Equipe equipe;
-	
+//	
 	@ManyToOne
 	@JoinColumn(nullable= false, name="id_saison")
 	Saison saison;
@@ -65,7 +64,7 @@ public class EquipeSaison {
 	public void setEquipe(Equipe equipe) {
 		this.equipe = equipe;
 	}
-	
+//	
 	public void setSaison(Saison saison) {
 		this.saison = saison;
 	}

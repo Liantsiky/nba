@@ -24,7 +24,7 @@ public class Saison {
 	@Column(name="anneedebut")
 	int anneeDebut;
 	
-	@Column(name="anneeFin")
+	@Column(name="anneefin")
 	int anneeFin;
 	
 	public int getIdSaison() {

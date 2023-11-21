@@ -22,10 +22,10 @@ public class Saison {
 	int edition;
 	
 	@Column(name="anneedebut")
-	LocalDate anneeDebut;
+	int anneeDebut;
 	
 	@Column(name="anneeFin")
-	LocalDate anneeFin;
+	int anneeFin;
 	
 	public int getId() {
 		return id;
@@ -35,11 +35,11 @@ public class Saison {
 		return edition;
 	}
 	
-	public LocalDate getAnneeDebut() {
+	public int getAnneeDebut() {
 		return anneeDebut;
 	}
 	
-	public LocalDate getAnneeFin() {
+	public int getAnneeFin() {
 		return anneeFin;
 	}
 	
@@ -51,11 +51,16 @@ public class Saison {
 		this.edition = edition;
 	}
 	
-	public void setAnneeDebut(LocalDate anneeDebut) {
+	public void setAnneeDebut(int anneeDebut) throws Exception{
+		if(anneeDebut < 0) throw new Exception("Annee debut de saison invalide");
 		this.anneeDebut = anneeDebut;
 	}
 	
-	public void setAnneeFin(LocalDate anneeFin) {
+	public void setAnneeFin(int anneeFin) throws Exception{
+		if(anneeFin < 0) throw new Exception("Annee fin de saison invalide");
+		else if(anneeFin - this.getAnneeDebut() > 1 || anneeFin < this.getAnneeDebut()) {
+			throw new Exception("L'espace etre l'annee de fin de saison et debut ne doit etre que de 1 annee");
+		}
 		this.anneeFin = anneeFin;
 	}
 	

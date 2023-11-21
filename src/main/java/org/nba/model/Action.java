@@ -12,9 +12,8 @@ import jakarta.persistence.Table;
 public class Action {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
-	int id;
+	String id;
 	
 	@Column(name="designation")
 	String designation;
@@ -22,7 +21,7 @@ public class Action {
 	@Column(name="point")
 	int point;
 	
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 	
@@ -34,7 +33,7 @@ public class Action {
 		return point;
 	}
 	
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	

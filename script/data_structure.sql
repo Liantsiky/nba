@@ -3,58 +3,59 @@ create database nba
 --table
 	--joueur
 	create table joueur (
-		id serial primary key,
+		id_joueur serial primary key,
 		nomprenom varchar(50)
 	);
 	--equipe
 	create table equipe (
-		id  serial primary key,
+		id_equipe  serial primary key,
 		nomequipe varchar(15)
 	);
 	--saison
 	create table saison (
-		id serial primary key,
+		id_saison serial primary key,
 		edition int,
 		anneedebut int,
 		anneefin int
 	);
 	--action
 	create table actions (
-		id varchar(10) primary key,
+		id_actions varchar(10) primary key,
 		designation varchar(20),
 		point int
 	);
+
 	--equipe_saison
 	create table equipesaison (
-		id serial primary key,
-		joueur_id int,
-		equipe_id int,
-		saison_id int,
+		id_equipesaison serial primary key,
+		id_joueur int,
+		id_equipe int,
+		id_saison int,
 		numerojoueur int,
-		foreign key (joueur_id) references joueur(id),
-		foreign key (equipe_id) references equipe(id),
-		foreign key (saison_id) references saison(id)
+		foreign key (id_joueur) references joueur(id_joueur),
+		foreign key (id_equipe) references equipe(id_equipe),
+		foreign key (id_saison) references saison(id_saison)
 	);
 	--matchs
 	create table matchs (
-		id serial primary key,
-		saison_id int,
-		equipe_id1 int,
-		equipe_id2 int,
+		id_matchs serial primary key,
+		id_saison int,
+		id_equipe1 int,
+		id_equipe2 int,
 		datematch date,
-		foreign key (equipe_id1) references equipe(id),
-		foreign key (equipe_id2) references equipe(id),
-		foreign key (saison_id) references saison(id)
+		foreign key (id_equipe1) references equipe(id_equipe),
+		foreign key (id_equipe2) references equipe(id_equipe),
+		foreign key (id_saison) references saison(id_saison)
 	);
 	--statistiques
 	create table statistique (
-		id serial primary key,
-		match_id int,
-		joueur_id int,
-		action_id varchar(10),
-		foreign key (joueur_id) references joueur(id),
-		foreign key (match_id) references matchs(id),
-		foreign key (action_id) references actions(id)
+		id_statistique serial primary key,
+		id_matchs int,
+		id_joueur int,
+		id_actions varchar(10),
+		foreign key (id_joueur) references joueur(id_joueur),
+		foreign key (id_matchs) references matchs(id_matchs),
+		foreign key (id_actions) references actions(id_actions)
 	);
 	
 
